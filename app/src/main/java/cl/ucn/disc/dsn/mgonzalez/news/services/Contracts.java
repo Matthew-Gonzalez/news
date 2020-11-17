@@ -27,4 +27,12 @@ public interface Contracts {
    * @return the List of News.
    */
   List<News> retrieveNews(Integer size);
+
+  /**
+   * Save one News into the System.
+   *
+   * @param news to save.
+   */
+  void saveNews(News news);
+
 }
