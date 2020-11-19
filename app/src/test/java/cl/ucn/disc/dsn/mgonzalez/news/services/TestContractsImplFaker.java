@@ -88,7 +88,7 @@ public class TestContractsImplFaker {
     Contracts contracts = new ContractsImplFaker();
 
     // Create a News
-    News news = new News(Integer.toUnsignedLong(5), faker.book().title(),
+    News news = new News(faker.book().title(),
         faker.name().username(), faker.name().fullName(), faker.internet().url(),
         faker.internet().avatar(), faker.harryPotter().quote(),
         faker.lorem().paragraph(3),

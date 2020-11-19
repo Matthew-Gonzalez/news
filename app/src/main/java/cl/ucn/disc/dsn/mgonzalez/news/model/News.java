@@ -10,6 +10,8 @@
 
 package cl.ucn.disc.dsn.mgonzalez.news.model;
 
+import cl.ucn.disc.dsn.mgonzalez.news.utils.Validation;
+import net.openhft.hashing.LongHashFunction;
 import org.threeten.bp.ZonedDateTime;
 
 /**
@@ -68,7 +70,6 @@ public final class News {
   /**
    * The constructor.
    *
-   * @param id
    * @param title
    * @param source
    * @param author
@@ -78,9 +79,17 @@ public final class News {
    * @param content
    * @param publishedAt
    */
-  public News(Long id, String title, String source, String author, String url,
+  public News(String title, String source, String author, String url,
       String urlImage, String description, String content, ZonedDateTime publishedAt) {
-    this.id = id;
+
+    Validation.minSize(title, 2, "title");
+    Validation.minSize(source, 2, "source");
+    Validation.minSize(author, 2, "author");
+    Validation.minSize(description, 2, "description");
+    Validation.notNull(content, "content");
+    Validation.notNull(publishedAt, "publishedAt");
+
+    this.id = LongHashFunction.xx().hashChars(title + "|" + source + "|" + author);
     this.title = title;
     this.source = source;
     this.author = author;
