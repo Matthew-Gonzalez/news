@@ -58,7 +58,6 @@ public class TestContractsImplFaker {
     // debug to log
     for (News n : news){
       log.debug("News : {}", n);
-      System.out.println("News : " + n.getTitle());
     }
 
     // size = 0
@@ -71,6 +70,7 @@ public class TestContractsImplFaker {
     Assertions.assertTrue(contracts.retrieveNews(10).size() <= 10, "List size != 10");
 
     log.debug("Done!");
+
   }
 
   /**
@@ -116,9 +116,9 @@ public class TestContractsImplFaker {
     // debug to log
     for (News n : newsList){
       log.debug("News : {}", n);
-      System.out.println("News : " + n.getTitle());
     }
 
     log.debug("Done!");
+
   }
 }
