@@ -10,6 +10,51 @@
 
 package cl.ucn.disc.dsn.mgonzalez.news.services;
 
+import cl.ucn.disc.dsn.mgonzalez.news.model.News;
+import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * Testing the Contracts with NewsApi service.
+ *
+ * @author Matthew Gonzalez-Mansilla
+ */
 public class TestContractsImplNewsApi {
 
+  /**
+   * The Logger.
+   */
+  private static final Logger log = LoggerFactory.getLogger(TestContractsImplNewsApi.class);
+
+  /**
+   * The test of retrieve news.
+   */
+  @Test
+  public void testRetrieveNews(){
+
+    log.debug("Testing ..");
+
+    // The Contracts
+    Contracts contracts = new ContractsImplNewsApi("05f5d086cbc647e6bd2a902a8758af3b");
+
+    // The List of news
+    int size = 20;
+    List<News> news = contracts.retrieveNews(size);
+
+    // Validations
+    Assertions.assertNotNull(news, "List null !!");
+    Assertions.assertEquals(size, news.size(), "Wrong size !!");
+
+    // Show the news
+    for (News n : news){
+      log.debug("News: {}", ToStringBuilder.reflectionToString(n, ToStringStyle.MULTI_LINE_STYLE));
+    }
+
+    log.debug(".. Done!");
+  }
 }
