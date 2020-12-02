@@ -19,8 +19,14 @@
 
 package cl.ucn.disc.dsn.mgonzalez.news;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
+import cl.ucn.disc.dsn.mgonzalez.news.model.News;
+import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsApi;
+import java.util.List;
 
 /**
  * The main class.
@@ -28,6 +34,11 @@ import android.os.Bundle;
  * @author Matthew Gonzalez-Mansilla
  */
 public class MainActivity extends AppCompatActivity {
+
+  /**
+   * The ListView.
+   */
+  protected ListView listView;
 
   /**
    * OnCreate.
@@ -38,5 +49,28 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    this.listView = findViewById(R.id.am_lv_news);
+
+    // Get the news in the background thread
+    AsyncTask.execute(() -> {
+      // Using the contracts to get the news
+      ContractsImplNewsApi contracts = new ContractsImplNewsApi("05f5d086cbc647e6bd2a902a8758af3b");
+
+      // Get the news from internet
+      List<News> newsList = contracts.retrieveNews(30);
+
+      // Build a simple adapter to show the list of news as String
+      ArrayAdapter<String> adapter = new ArrayAdapter(
+          this,
+          android.R.layout.simple_expandable_list_item_1,
+          newsList
+      );
+
+      // Set the adapter
+      runOnUiThread(() -> {
+        this.listView.setAdapter(adapter);
+      });
+    });
   }
 }
