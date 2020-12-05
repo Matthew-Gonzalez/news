@@ -16,6 +16,11 @@ import com.kwabenaberko.newsapilib.models.Article;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -60,15 +65,15 @@ public class ContractsImplNewsApi  implements  Contracts{
     // Warning message?
     boolean needFix = false;
 
-    // FIXME: Fix the author null
-    if (article.getAuthor() == null){
-      article.setAuthor("No author");
+    // Fix the author null
+    if (article.getAuthor() == null || article.getAuthor().length() == 0){
+      article.setAuthor("No author*");
       needFix = true;
     }
 
-    // FIXME: Fix more restrictions
+    // Fix more restrictions
     if (article.getDescription() == null || article.getDescription().length() == 0){
-      article.setDescription("No description");
+      article.setDescription("No description*");
       needFix = true;
     }
 
@@ -105,29 +110,48 @@ public class ContractsImplNewsApi  implements  Contracts{
    */
   @Override
   public List<News> retrieveNews(final Integer size) {
+
     try {
+
+      // Get the list of Article
       List<Article> articles = newsApiService.getTopHeadLines(
           "technology", size
       );
 
       // The List of articles to List of news
-      List<News> news = new ArrayList<>();
+      List<News> rawNews = new ArrayList<>();
 
       for (Article article : articles) {
-        log.debug("Article: {}", ToStringBuilder.reflectionToString(article, ToStringStyle
-            .MULTI_LINE_STYLE));
-        news.add(toNews(article));
+        rawNews.add(toNews(article));
       }
 
-      return news;
+      // Return the news filtered and sorted by date
+      return rawNews.stream()
+          // Remove the duplicated (by keys)
+          .filter(distinctByKey(News::getId))
+          // Order by date
+          .sorted((k1, k2) -> k2.getPublishedAt().compareTo(k1.getPublishedAt()))
+          .collect(Collectors.toList());
 
     } catch (IOException e) {
-      log.error("Error", e);
-      return null;
+      // Encapsulate!
+      throw new RuntimeException(e);
     }
   }
 
-    /**
+  /**
+   * The Predicate to filter news
+   *
+   * @param idExtractor
+   * @param <T> news to filter.
+   * @return true if the news already exist.
+   */
+  private static <T> Predicate<T> distinctByKey(Function<? super T, ?> idExtractor){
+    Map<Object, Boolean> seen = new ConcurrentHashMap<>();
+    return t -> seen.putIfAbsent(idExtractor.apply(t), Boolean.TRUE) == null;
+  }
+
+  /**
    * Save one News into the System.
    *
    * @param news to save.
