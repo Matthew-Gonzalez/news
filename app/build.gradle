@@ -86,4 +86,8 @@ dependencies {
 
     // LeakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
+
+    // FastAdapter + RecyclerView
+    implementation 'com.mikepenz:fastadapter:3.3.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
