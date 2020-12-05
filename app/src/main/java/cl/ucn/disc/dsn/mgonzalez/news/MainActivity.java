@@ -21,11 +21,15 @@ package cl.ucn.disc.dsn.mgonzalez.news;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
 import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsApi;
+import com.mikepenz.fastadapter.FastAdapter;
+import com.mikepenz.fastadapter.adapters.ModelAdapter;
 import java.util.List;
 
 /**
@@ -43,14 +47,24 @@ public class MainActivity extends AppCompatActivity {
   /**
    * OnCreate.
    *
-   * @param savedInstanceState
+   * @param savedInstanceState used to reload the app.
    */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    this.listView = findViewById(R.id.am_lv_news);
+    // The FasterAdapter
+    ModelAdapter<News, NewsItem> newsAdapter = new ModelAdapter<>(NewsItem::new);
+    FastAdapter<NewsItem> fastAdapter = FastAdapter.with(newsAdapter);
+    fastAdapter.withSelectable(false);
+
+    // The Recycler view
+    RecyclerView recyclerView = findViewById(R.id.am_rv_news);
+    recyclerView.setAdapter(fastAdapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.addItemDecoration(new DividerItemDecoration(this
+        , DividerItemDecoration.VERTICAL));
 
     // Get the news in the background thread
     AsyncTask.execute(() -> {
@@ -60,16 +74,9 @@ public class MainActivity extends AppCompatActivity {
       // Get the news from internet
       List<News> newsList = contracts.retrieveNews(30);
 
-      // Build a simple adapter to show the list of news as String
-      ArrayAdapter<String> adapter = new ArrayAdapter(
-          this,
-          android.R.layout.simple_expandable_list_item_1,
-          newsList
-      );
-
       // Set the adapter
       runOnUiThread(() -> {
-        this.listView.setAdapter(adapter);
+        newsAdapter.add(newsList);
       });
     });
   }
