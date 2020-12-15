@@ -10,7 +10,7 @@
   -->
 
 <resources>
-  <style name="CommonButton" parent="Widget.AppCompat.Button">
+  <style name="DefaultButton" parent="Widget.AppCompat.Button">
     <item name="android:background">@drawable/button_background</item>
   </style>
 
@@ -45,5 +45,12 @@
   <style name="NewsDescriptionText">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="News" parent="Theme.News.Item">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingBottom">4dp</item>
+    <item name="android:orientation">horizontal</item>
   </style>
 </resources>

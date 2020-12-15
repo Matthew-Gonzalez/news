@@ -12,8 +12,11 @@ package cl.ucn.disc.dsn.mgonzalez.news.activities;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -75,5 +78,52 @@ public class MainActivity extends AppCompatActivity {
         newsAdapter.add(newsList);
       });
     });
+  }
+
+  /**
+   * Create the night mode menu option.
+   *
+   * @param menu the menu in the action bar.
+   * @return true to display the menu, false to hide it.
+   */
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+
+    // Change the label of the menu based on the state of the app
+    int nightMode = AppCompatDelegate.getDefaultNightMode();
+    if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+      menu.findItem(R.id.mm_it_nightMode).setTitle(R.string.day_mode);
+    } else{
+      menu.findItem(R.id.mm_it_nightMode).setTitle(R.string.night_mode);
+    }
+
+    return true;
+  }
+
+  /**
+   * Handles options menu item clicks.
+   *
+   * @param item the item was pressed.
+   * @return true since the item click va handle.
+   */
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item){
+    // Check if the correct item was clicked
+    if (item.getItemId() == R.id.mm_it_nightMode){
+      // Get the night mode state of the app
+      int nightMode = AppCompatDelegate.getDefaultNightMode();
+      // Set the theme mode for the restarted activity
+      if (nightMode == AppCompatDelegate.MODE_NIGHT_YES){
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+      }else{
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+      }
+
+      // Recreate the activity for the theme change to take effect
+      recreate();
+    }
+
+    return true;
   }
 }

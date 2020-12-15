@@ -26,4 +26,9 @@
     <item name="android:editTextColor">@color/white</item>
     <item name="android:textColorHint">@color/windowBackground</item>
   </style>
+
+  <!-- News -->
+  <style name="Theme.News.Item">
+    <item name="android:background">#FFFFFF</item>
+  </style>
 </resources>
