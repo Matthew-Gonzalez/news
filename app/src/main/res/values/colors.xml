@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="purple_200">#FFBB86FC</color>
-  <color name="purple_500">#FF6200EE</color>
-  <color name="purple_700">#FF3700B3</color>
-  <color name="teal_200">#FF03DAC5</color>
-  <color name="teal_700">#FF018786</color>
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
+
+  <color name="colorAccent">#D81B60</color>
+  <color name="lineDivider">@color/orange_800</color>
+
+  <!-- Text -->
+  <color name="textColorPrimary">@color/orange_900</color>
+  <color name="textColorSecondary">@color/orange_800</color>
+  <color name="textColorTertiary">@color/orange_700</color>
+
+  <!-- Toolbar -->
+  <color name="statusBarColor">#994700</color>
+  <color name="toolbarBackground">@color/orange_900</color>
+  <color name="windowBackground">@color/orange_white</color>
+  <color name="dividerColor">@color/orange_300</color>
+  <color name="navigationBarColor">#994700</color>
+
+  <color name="toolbarTitleTextColor">@color/orange_white</color>
+  <color name="toobarSubtitleTextColor">@color/orange_50</color>
 </resources>
