@@ -2,16 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:orientation="horizontal"
-  android:paddingBottom="4dp">
+  android:paddingBottom="4dp"
+  android:background="@color/white"
+  android:orientation="horizontal">
 
   <ImageView
+    android:layout_width="80dp"
+    android:layout_height="80dp"
     android:paddingTop="2dp"
     android:paddingStart="2dp"
     android:paddingEnd="2dp"
-    android:src="@mipmap/ic_launcher"
-    android:layout_width="80dp"
-    android:layout_height="80dp"/>
+    android:src="@mipmap/ic_launcher" />
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -25,28 +26,28 @@
 
       <TextView
         android:id="@+id/in_tv_author"
-        android:text="Author"
-        style="@style/NewsAuthorText" />
+        style="@style/NewsAuthorText"
+        android:text="Author" />
 
       <TextView
         android:id="@+id/in_tv_source"
-        android:text="Source"
-        style="@style/NewsSourceText" />
+        style="@style/NewsSourceText"
+        android:text="Source" />
 
       <TextView
         android:id="@+id/in_tv_published_at"
-        android:text="2020.dic.05"
-        style="@style/NewsPublishedAtText" />
+        style="@style/NewsPublishedAtText"
+        android:text="2020.dic.05" />
     </LinearLayout>
 
     <TextView
       android:id="@+id/in_tv_title"
-      android:text="The Title"
-      style="@style/NewsTitleText" />
+      style="@style/NewsTitleText"
+      android:text="The Title" />
 
     <TextView
       android:id="@+id/in_tv_description"
-      android:text="The Description"
-      style="@style/NewsDescriptionText" />
+      style="@style/NewsDescriptionText"
+      android:text="The Description" />
   </LinearLayout>
 </LinearLayout>
