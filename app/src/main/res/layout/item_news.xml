@@ -25,41 +25,28 @@
 
       <TextView
         android:id="@+id/in_tv_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="Author"/>
+        android:text="Author"
+        style="@style/NewsAuthorText" />
 
       <TextView
         android:id="@+id/in_tv_source"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:paddingStart="4dp"
         android:text="Source"
-        android:textStyle="bold"/>
+        style="@style/NewsSourceText" />
 
       <TextView
         android:id="@+id/in_tv_published_at"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingEnd="2dp"
         android:text="2020.dic.05"
-        android:textAlignment="textEnd"/>
+        style="@style/NewsPublishedAtText" />
     </LinearLayout>
 
     <TextView
       android:id="@+id/in_tv_title"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
       android:text="The Title"
-      android:textStyle="bold"/>
+      style="@style/NewsTitleText" />
 
     <TextView
       android:id="@+id/in_tv_description"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="The Description"/>
+      android:text="The Description"
+      style="@style/NewsDescriptionText" />
   </LinearLayout>
 </LinearLayout>
