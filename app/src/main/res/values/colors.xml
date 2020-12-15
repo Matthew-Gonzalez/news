@@ -19,5 +19,5 @@
   <color name="navigationBarColor">#994700</color>
 
   <color name="toolbarTitleTextColor">@color/orange_white</color>
-  <color name="toobarSubtitleTextColor">@color/orange_50</color>
+  <color name="toolbarSubtitleTextColor">@color/orange_50</color>
 </resources>
