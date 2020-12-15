@@ -10,7 +10,6 @@
   -->
 
 <resources>
-
   <color name="orange_white">#FFFFFF</color>
   <color name="orange_50">#FFF3E0</color>
   <color name="orange_100">#FFE0B2</color>
@@ -27,5 +26,4 @@
   <color name="orange_A400">#FF9100</color>
   <color name="orange_A700">#FF6D00</color>
   <color name="orange_black">#000000</color>
-
 </resources>
