@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Create the default admin user
+        \App\Models\User::create([
+            'name' => 'admin',
+            'email' => 'admin@admin.admin',
+            'password' => bcrypt('admin123')
+        ]);
     }
 }
