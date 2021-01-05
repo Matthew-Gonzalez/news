@@ -2,10 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add default admin user">
-      <change afterPath="$PROJECT_DIR$/.idea/conventionalCommit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmablePasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationPromptController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/NewPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordResetLinkController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerifyEmailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Auth/LoginRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/View/Components/AppLayout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/View/Components/GuestLayout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/confirm-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/application-logo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-card.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-session-status.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-validation-errors.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/button.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/dropdown-link.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/dropdown.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/input.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/label.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/nav-link.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/responsive-nav-link.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/AuthenticationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/EmailVerificationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/PasswordConfirmationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/PasswordResetTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/RegistrationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +182,7 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mDHwXxl1PhAd1iuDsub2ujFLkw" />
@@ -149,7 +197,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -171,7 +219,7 @@
       <workItem from="1609100532391" duration="3242000" />
       <workItem from="1609604688549" duration="741000" />
       <workItem from="1609853258586" duration="1800000" />
-      <workItem from="1609871884638" duration="5239000" />
+      <workItem from="1609871884638" duration="10584000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -208,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609103550743</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(Laravel): add default admin user">
+      <created>1609877430999</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609877430999</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,5 +323,9 @@
     <MESSAGE value="feat(Laravel): create the web application" />
     <MESSAGE value="feat(Laravel): add default admin user" />
     <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add default admin user" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
