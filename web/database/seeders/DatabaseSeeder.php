@@ -12,6 +12,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+Use \App\Models\User;
+Use \App\Models\News;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,10 +25,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Create the default admin user
-        \App\Models\User::create([
+        User::create([
             'name' => 'admin',
             'email' => 'admin@admin.admin',
             'password' => bcrypt('admin123')
         ]);
+
+        // Populate with news
+        News::factory(20)->create();
     }
 }
