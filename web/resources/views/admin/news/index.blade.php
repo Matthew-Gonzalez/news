@@ -25,17 +25,17 @@
                         <td class="py-4">{{$newsItem->title}}</td>
                         <td class="py-4">{{$newsItem->author}}</td>
                         <td class="py-4">{{$newsItem->source}}</td>
-                        <td class="py-4">{{$newsItem->published_at}}</td>
+                        <td class="py-4">{{Carbon\Carbon::parse($newsItem->published_at)->format('d-m-Y h:i:s')}}</td>
                         <td class="px-2 py-4">
                             <a class="px-4 py-2 bg-blue-400 rounded" href="{{ route('admin.news.edit', $newsItem) }}">
                                 Edit
                             </a>
                         </td>
                         <td class="px-2 py-4">
-                            <form action="{{ route('admin.news.destroy', $newsItem) }}" method="POST">
+                            <form method="POST" action="{{ route('admin.news.destroy', $newsItem) }}">
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="px-4 py-2 bg-red-400 rounded">
+                                <button type="submit" class="px-4 py-2 bg-red-400 rounded">
                                     Delete
                                 </button>
                             </form>
