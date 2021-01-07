@@ -47,7 +47,19 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:50',
+            'source' => 'required|string|max:50',
+            'url' => 'required|unique:news',
+            'description' => 'required|string|max:255',
+            'content' => 'required|string',
+            'published_at' => 'required|date'
+        ]);
+
+        News::create($request->all());
+
+        return redirect()->route('admin.news.index');
     }
 
     /**

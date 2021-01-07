@@ -32,10 +32,10 @@
                             </a>
                         </td>
                         <td class="px-2 py-4">
-                            <form action="{{ route('admin.news.destroy', $newsItem) }}" method="POST">
+                            <form method="POST" action="{{ route('admin.news.destroy', $newsItem) }}">
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="px-4 py-2 bg-red-400 rounded">
+                                <button type="submit" class="px-4 py-2 bg-red-400 rounded">
                                     Delete
                                 </button>
                             </form>

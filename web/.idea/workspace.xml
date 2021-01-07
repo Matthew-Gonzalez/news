@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add fillable atributes on News Model">
-      <change afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add seeder and index view for News">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +143,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mDHwXxl1PhAd1iuDsub2ujFLkw" />
@@ -182,7 +183,7 @@
       <workItem from="1609604688549" duration="741000" />
       <workItem from="1609853258586" duration="1800000" />
       <workItem from="1609871884638" duration="26013000" />
-      <workItem from="1609945556890" duration="17922000" />
+      <workItem from="1609945556890" duration="28495000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -240,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609906949824</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat(Laravel): add seeder and index view for News">
+      <created>1609984574782</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609984574782</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +309,8 @@
     <MESSAGE value="feat(Laravel): add default admin user" />
     <MESSAGE value="feat(Laravel): install Laravel Breeze" />
     <MESSAGE value="feat(Laravel): add fillable atributes on News Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add fillable atributes on News Model" />
+    <MESSAGE value="feat(Laravel): add seeder and index view for News" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add seeder and index view for News" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
