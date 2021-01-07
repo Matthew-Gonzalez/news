@@ -81,7 +81,7 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        return view('admin.news.edit', compact('category'));
+        return view('admin.news.edit', compact('news'));
     }
 
     /**
@@ -93,7 +93,19 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:50',
+            'source' => 'required|string|max:50',
+            'url' => "required|unique:news,url,$news->id",
+            'description' => 'required|string|max:255',
+            'content' => 'required|string',
+            'published_at' => 'required|date'
+        ]);
+
+        $news->update($request->all());
+
+        return redirect()->route('admin.news.index');
     }
 
     /**

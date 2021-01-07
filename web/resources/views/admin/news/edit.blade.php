@@ -1,16 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add News') }}
+            {{ __('Edit News') }}
         </h2>
     </x-slot>
     <div class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {!! Form::open(['route' => 'admin.news.store']) !!}
+        {!! Form::model($news, ['route' => ['admin.news.update', $news], 'method' => 'PUT']) !!}
         <div class="py-2">
             {!! Form::label('title', 'Title', ['class' => 'font-bold']) !!}
             {!! Form::text('title', null, ['class' => 'w-full rounded', 'maxlength' => 255]) !!}
             @error('title')
-                <span class="text-red-600">{{ $message }}</span>
+            <span class="text-red-600">{{ $message }}</span>
             @enderror
         </div>
         <div class="py-2">
@@ -63,7 +63,7 @@
             @enderror
         </div>
         <div class="py-2">
-            {!! Form::submit('Add News', ['class' => 'px-4 py-2 bg-green-400 rounded']) !!}
+            {!! Form::submit('Update News', ['class' => 'px-4 py-2 bg-green-400 rounded']) !!}
         </div>
         {!! Form::close() !!}
     </div>
