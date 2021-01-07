@@ -27,6 +27,7 @@ import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsApi;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.adapters.ModelAdapter;
 import java.util.List;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * The main class.
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
    * The ListView.
    */
   protected ListView listView;
+
+  private SwipeRefreshLayout swipeContainer;
 
   /**
    * OnCreate.
@@ -78,6 +81,28 @@ public class MainActivity extends AppCompatActivity {
         newsAdapter.add(newsList);
       });
     });
+
+    // Lookup the swipe container view
+    swipeContainer = (SwipeRefreshLayout) findViewById(R.id.am_swl_refresh);
+    // Setup refresh listener which triggers new data loading
+    swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+      @Override
+      public void onRefresh() {
+
+        // Your code to refresh the list here.
+        // Make sure you call swipeContainer.setRefreshing(false)
+        // once the network request has completed successfully.
+        fastAdapter.notifyDataSetChanged();
+        swipeContainer.setRefreshing(false);
+      }
+    });
+
+    // Configure the refreshing colors
+    swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+            android.R.color.holo_green_light,
+            android.R.color.holo_orange_light,
+            android.R.color.holo_red_light);
+
   }
 
   /**
