@@ -14,9 +14,7 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-Route::redirect('/', 'news');
-
-Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::redirect('/', '/news');
 
 Route::resource('news', NewsController::class)->names('admin.news');
 

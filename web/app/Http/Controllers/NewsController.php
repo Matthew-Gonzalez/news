@@ -29,6 +29,16 @@ class NewsController extends Controller
         return view('admin.news.index', compact('news'));
     }
 
+    /**
+     * Get the list of news
+     *
+     * @return News[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function list()
+    {
+        return News::all();
+    }
+
     /*
      * Show the form for creating a new resource.
      *
