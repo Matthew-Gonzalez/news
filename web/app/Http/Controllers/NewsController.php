@@ -35,9 +35,60 @@ class NewsController extends Controller
      *
      * @return News[]|\Illuminate\Database\Eloquent\Collection
      */
-    public function list()
+    public function list(Request $request)
     {
-        return News::orderBy('published_at', 'DESC')->get();
+
+
+        $pageSize = $request->query('pageSize', 20);
+        $pageN = $request->query('page', 1);
+        $q = $request->query('q', null);
+        $apiKey = $request->query('apiKey', null);
+
+        // First obtain how many news can be returned
+        $newsCount = ($q == null) ? News::count() : News::where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->count();
+
+        // Validation of pageSize
+        if (is_numeric($pageSize)){
+
+            $temp = (int)$pageSize;
+
+            if ($temp < 1){
+                $pageSize = 1;
+            }elseif ($temp > 100){
+                $pageSize = 100;
+            }else{
+                $pageSize = $temp;
+            }
+
+        }else{
+            $pageSize = 20;
+        }
+
+
+        // Validation page
+        if (is_numeric($pageN)){
+
+            $temp = (int)$pageN;
+            $maxPages = $newsCount / $pageSize;
+
+            if ($temp < 1 || $maxPages < 1){
+                $pageN = 1;
+            }elseif ($temp > $maxPages){
+                $pageN = (int)$maxPages + 1;
+            }else{
+                $pageN = $temp;
+            }
+
+        }else{
+            $pageN = 1;
+        }
+
+
+        if ($q == null){
+            return News::orderBy('published_at', 'DESC')->paginate($pageSize);
+        }else{
+            return News::orderBy('published_at', 'DESC')->where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->paginate($pageSize);
+        }
     }
 
     /*
