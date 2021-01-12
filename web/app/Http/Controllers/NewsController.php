@@ -121,7 +121,7 @@ class NewsController extends Controller
 
         News::create($request->all());
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('store_msg', 'stored');
     }
 
     /**
@@ -167,7 +167,7 @@ class NewsController extends Controller
 
         $news->update($request->all());
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('update_msg', 'updated');
     }
 
     /**

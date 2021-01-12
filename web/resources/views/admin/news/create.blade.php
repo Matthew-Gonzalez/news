@@ -67,4 +67,21 @@
         </div>
         {!! Form::close() !!}
     </div>
+
+    @section('js')
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <!-- Eny input error alert -->
+        @if($errors->any())
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!'
+              })
+            </script>
+        @endif
+
+    @endsection
 </x-app-layout>

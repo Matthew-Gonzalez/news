@@ -81,12 +81,33 @@
             <script>
               Swal.fire(
                   'Deleted!',
-                  'Your file has been deleted.',
+                  'The news has been deleted.',
+                  'success'
+              )
+            </script>
+        @endif
+
+        <!-- News stored successful alert -->
+        @if(session('store_msg'))
+            <script>
+              Swal.fire(
+                  'Stored!',
+                  'The news has been stored.',
+                  'success'
+              )
+            </script>
+        @endif
+
+        <!-- News updated successful alert -->
+        @if(session('update_msg'))
+            <script>
+              Swal.fire(
+                  'Updated!',
+                  'The news has been updated.',
                   'success'
               )
             </script>
         @endif
 
     @endsection
-
 </x-app-layout>
