@@ -116,7 +116,7 @@ class NewsController extends Controller
             'url' => 'required|unique:news',
             'description' => 'required|string|max:255',
             'content' => 'required|string',
-            'published_at' => 'required|date'
+            'published_at' => 'required|date|before:tomorrow'
         ]);
 
         News::create($request->all());
@@ -162,7 +162,7 @@ class NewsController extends Controller
             'url' => "required|unique:news,url,$news->id",
             'description' => 'required|string|max:255',
             'content' => 'required|string',
-            'published_at' => 'required|date'
+            'published_at' => 'required|date|before:tomorrow'
         ]);
 
         $news->update($request->all());
@@ -180,6 +180,6 @@ class NewsController extends Controller
     {
         $news->delete();
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('delete_msg', 'deleted');
     }
 }

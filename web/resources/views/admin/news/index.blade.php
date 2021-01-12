@@ -32,9 +32,9 @@
                             </a>
                         </td>
                         <td class="px-2 py-4">
-                            <form method="POST" action="{{ route('admin.news.destroy', $newsItem) }}">
+                            <form action="{{ route('admin.news.destroy', $newsItem) }}" class="delete-form-validation" method="POST" >
                                 @csrf
-                                @method('delete')
+                                @method('DELETE')
                                 <button type="submit" class="px-4 py-2 bg-red-400 rounded">
                                     Delete
                                 </button>
@@ -48,4 +48,45 @@
             {{ $news->links() }}
         </div>
     </div>
+
+    @section('js')
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <!-- Delete news alert confirmation -->
+        <script>
+          $(document).ready(function(){
+            $('.delete-form-validation').submit(function (e){
+              e.preventDefault();
+
+              Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  this.submit();
+                }
+              })
+            });
+          });
+        </script>
+
+        <!-- News deleted successful alert -->
+        @if(session('delete_msg'))
+            <script>
+              Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+              )
+            </script>
+        @endif
+
+    @endsection
+
 </x-app-layout>
