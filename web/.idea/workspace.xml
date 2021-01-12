@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add delete button for News index view">
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="fix(Laravel): route not defined [news.index] fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -181,7 +183,7 @@
       <workItem from="1609871884638" duration="26013000" />
       <workItem from="1609945556890" duration="33870000" />
       <workItem from="1610024454625" duration="2670000" />
-      <workItem from="1610418794668" duration="2703000" />
+      <workItem from="1610418794668" duration="6980000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -267,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610005072676</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix(Laravel): route not defined [news.index] fixed">
+      <created>1610422284725</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610422284725</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +341,8 @@
     <MESSAGE value="feat(Laravel): add Laravel Collective to make forms and create view for News" />
     <MESSAGE value="feat(Laravel): add edit view for News" />
     <MESSAGE value="feat(Laravel): add delete button for News index view" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add delete button for News index view" />
+    <MESSAGE value="fix(Laravel): route not defined [news.index] fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(Laravel): route not defined [news.index] fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

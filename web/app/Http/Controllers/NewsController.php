@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -14,7 +15,7 @@ class NewsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -36,7 +37,7 @@ class NewsController extends Controller
      */
     public function list()
     {
-        return News::all();
+        return News::orderBy('published_at', 'DESC')->get();
     }
 
     /*
