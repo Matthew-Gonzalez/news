@@ -14,11 +14,9 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-Route::redirect('/', 'news');
+Route::redirect('/', '/news');
 
-Route::get('/news', [NewsController::class, 'index'])->name('news.index');
-
-Route::resource('news', NewsController::class)->names('admin.news');
+Route::resource('news', NewsController::class)->middleware(['auth'])->names('admin.news');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

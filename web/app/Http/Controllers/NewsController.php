@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -14,7 +15,7 @@ class NewsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -27,6 +28,67 @@ class NewsController extends Controller
         $news = News::orderBy('published_at', 'DESC')->paginate(8);
 
         return view('admin.news.index', compact('news'));
+    }
+
+    /**
+     * Get the list of news
+     *
+     * @return News[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function list(Request $request)
+    {
+
+
+        $pageSize = $request->query('pageSize', 20);
+        $pageN = $request->query('page', 1);
+        $q = $request->query('q', null);
+        $apiKey = $request->query('apiKey', null);
+
+        // First obtain how many news can be returned
+        $newsCount = ($q == null) ? News::count() : News::where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->count();
+
+        // Validation of pageSize
+        if (is_numeric($pageSize)){
+
+            $temp = (int)$pageSize;
+
+            if ($temp < 1){
+                $pageSize = 1;
+            }elseif ($temp > 100){
+                $pageSize = 100;
+            }else{
+                $pageSize = $temp;
+            }
+
+        }else{
+            $pageSize = 20;
+        }
+
+
+        // Validation page
+        if (is_numeric($pageN)){
+
+            $temp = (int)$pageN;
+            $maxPages = $newsCount / $pageSize;
+
+            if ($temp < 1 || $maxPages < 1){
+                $pageN = 1;
+            }elseif ($temp > $maxPages){
+                $pageN = (int)$maxPages + 1;
+            }else{
+                $pageN = $temp;
+            }
+
+        }else{
+            $pageN = 1;
+        }
+
+
+        if ($q == null){
+            return News::orderBy('published_at', 'DESC')->paginate($pageSize);
+        }else{
+            return News::orderBy('published_at', 'DESC')->where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->paginate($pageSize);
+        }
     }
 
     /*
@@ -54,12 +116,12 @@ class NewsController extends Controller
             'url' => 'required|unique:news',
             'description' => 'required|string|max:255',
             'content' => 'required|string',
-            'published_at' => 'required|date'
+            'published_at' => 'required|date|before:tomorrow'
         ]);
 
         News::create($request->all());
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('store_msg', 'stored');
     }
 
     /**
@@ -100,12 +162,12 @@ class NewsController extends Controller
             'url' => "required|unique:news,url,$news->id",
             'description' => 'required|string|max:255',
             'content' => 'required|string',
-            'published_at' => 'required|date'
+            'published_at' => 'required|date|before:tomorrow'
         ]);
 
         $news->update($request->all());
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('update_msg', 'updated');
     }
 
     /**
@@ -118,6 +180,6 @@ class NewsController extends Controller
     {
         $news->delete();
 
-        return redirect()->route('admin.news.index');
+        return redirect()->route('admin.news.index')->with('delete_msg', 'deleted');
     }
 }

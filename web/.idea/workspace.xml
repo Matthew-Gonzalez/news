@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add edit view for News">
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add jQuery library and delete news confirmation alert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -177,7 +179,10 @@
       <workItem from="1609604688549" duration="741000" />
       <workItem from="1609853258586" duration="1800000" />
       <workItem from="1609871884638" duration="26013000" />
-      <workItem from="1609945556890" duration="33725000" />
+      <workItem from="1609945556890" duration="33870000" />
+      <workItem from="1610024454625" duration="2670000" />
+      <workItem from="1610418794668" duration="15356000" />
+      <workItem from="1610455712810" duration="14849000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -256,7 +261,42 @@
       <option name="project" value="LOCAL" />
       <updated>1610002950773</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(Laravel): add delete button for News index view">
+      <created>1610005072676</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610005072676</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix(Laravel): route not defined [news.index] fixed">
+      <created>1610422284725</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610422284725</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix(Laravel): published_at date format at store and update fixed">
+      <created>1610426676866</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610426676866</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat(Laravel): add API request with pageSize, page and q optional parameters">
+      <created>1610435717316</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610435717316</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat(Laravel): add jQuery library and delete news confirmation alert">
+      <created>1610483017717</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610483017717</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +360,12 @@
     <MESSAGE value="feat(Laravel): add seeder and index view for News" />
     <MESSAGE value="feat(Laravel): add Laravel Collective to make forms and create view for News" />
     <MESSAGE value="feat(Laravel): add edit view for News" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add edit view for News" />
+    <MESSAGE value="feat(Laravel): add delete button for News index view" />
+    <MESSAGE value="fix(Laravel): route not defined [news.index] fixed" />
+    <MESSAGE value="fix(Laravel): published_at date format at store and update fixed" />
+    <MESSAGE value="feat(Laravel): add API request with pageSize, page and q optional parameters" />
+    <MESSAGE value="feat(Laravel): add jQuery library and delete news confirmation alert" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add jQuery library and delete news confirmation alert" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

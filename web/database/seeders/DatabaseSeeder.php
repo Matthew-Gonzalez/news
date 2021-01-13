@@ -32,6 +32,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Populate with news
-        News::factory(20)->create();
+        News::factory(100)->create();
     }
 }
