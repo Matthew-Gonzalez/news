@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add jQuery library and delete news confirmation alert">
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add validation and successful alerts for store and update news">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_27_010931_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_27_010931_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
@@ -182,7 +186,8 @@
       <workItem from="1609945556890" duration="33870000" />
       <workItem from="1610024454625" duration="2670000" />
       <workItem from="1610418794668" duration="15356000" />
-      <workItem from="1610455712810" duration="14849000" />
+      <workItem from="1610455712810" duration="16178000" />
+      <workItem from="1610568356794" duration="26250000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -296,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610483017717</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat(Laravel): add validation and successful alerts for store and update news">
+      <created>1610487465785</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610487465785</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +377,8 @@
     <MESSAGE value="fix(Laravel): published_at date format at store and update fixed" />
     <MESSAGE value="feat(Laravel): add API request with pageSize, page and q optional parameters" />
     <MESSAGE value="feat(Laravel): add jQuery library and delete news confirmation alert" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add jQuery library and delete news confirmation alert" />
+    <MESSAGE value="feat(Laravel): add validation and successful alerts for store and update news" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add validation and successful alerts for store and update news" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

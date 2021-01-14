@@ -22,6 +22,7 @@ class CreateNewsTable extends Migration
             $table->string('url_image')->nullable();
             $table->string('description');
             $table->string('content');
+            $table->foreignId('time_zone_id')->nullable()->constrained('time_zones')->onUpdate('cascade')->onDelete(null);
             $table->timestamp('published_at');
             $table->timestamps();
         });

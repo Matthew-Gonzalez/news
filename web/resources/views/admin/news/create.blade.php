@@ -57,7 +57,10 @@
         </div>
         <div class="py-2">
             {!! Form::label('published_at', 'Published At', ['class' => 'font-bold']) !!}
-            {!! Form::datetimeLocal('published_at', null, ['class' => 'w-full rounded']) !!}
+            <div>
+                {!! Form::datetimeLocal('published_at', null, ['class' => 'rounded']) !!}
+                {!! Form::select('time_zone_id', $timeZones->pluck('full_name', 'id'), 426, ['class' => 'rounded']) !!}
+            </div>
             @error('published_at')
             <span class="text-red-600">{{ $message }}</span>
             @enderror

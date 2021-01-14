@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TimeZone;
 use Collective\Html\Eloquent\FormAccessible;
 use Carbon\Carbon;
 
@@ -19,11 +20,26 @@ class News extends Model
         'url_image',
         'description',
         'content',
-        'published_at'
+        'published_at',
+        'time_zone_id'
     ];
+
+    protected $hidden = ['time_zone_id'];
 
     use HasFactory;
     use FormAccessible;
+
+    /**
+     * Get the news time zone
+     *
+     * @return TimeZone
+     */
+    public function timeZone()
+    {
+        return $this->belongsTo(TimeZone::class, 'time_zone_id');
+    }
+
+
 
     /**
      * Get the published_at for forms.
@@ -33,7 +49,7 @@ class News extends Model
      */
     public function formPublishedAtAttribute($value)
     {
-        return Carbon::parse($value)->format('Y-m-d\\Th:i');
+        return Carbon::parse($value)->setTimezone($this->timeZone->name)->format('Y-m-d\\TH:i');
     }
 
     /**
@@ -43,6 +59,6 @@ class News extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = Carbon::parse($value)->format('Y-m-d h:i:s');
+        $this->attributes['published_at'] = Carbon::parse($value, $this->timeZone->name)->toJSON();
     }
 }
