@@ -92,6 +92,24 @@ public class MainActivity extends AppCompatActivity {
         // Your code to refresh the list here.
         // Make sure you call swipeContainer.setRefreshing(false)
         // once the network request has completed successfully.
+        // Get the news in the background thread
+        AsyncTask.execute(() -> {
+
+          // Using the contracts to get the news
+          ContractsImplNewsApi contracts = new ContractsImplNewsApi("05f5d086cbc647e6bd2a902a8758af3b");
+
+          // Get the news from internet
+          List<News> newsList = contracts.retrieveNews(20);
+
+          // Set the adapter
+          runOnUiThread(() -> {
+            // clear the items
+            newsAdapter.clear();
+            // add the news items
+            newsAdapter.add(newsList);
+          });
+        });
+
         fastAdapter.notifyDataSetChanged();
         swipeContainer.setRefreshing(false);
       }
