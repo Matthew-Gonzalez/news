@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\TimeZone;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -37,8 +38,6 @@ class NewsController extends Controller
      */
     public function list(Request $request)
     {
-
-
         $pageSize = $request->query('pageSize', 20);
         $pageN = $request->query('page', 1);
         $q = $request->query('q', null);
@@ -98,7 +97,9 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        $timeZones = TimeZone::Orderby('offset')->get();
+
+        return view('admin.news.create', compact('timeZones'));
     }
 
     /**
@@ -119,7 +120,17 @@ class NewsController extends Controller
             'published_at' => 'required|date|before:tomorrow'
         ]);
 
-        News::create($request->all());
+        $news = News::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'source' => $request->source,
+            'url' => $request->url,
+            'url_image' => $request->url_image,
+            'description' => $request->description,
+            'content' => $request->input('content'),
+            'time_zone_id' => $request->time_zone_id,
+            'published_at' => $request->published_at
+        ]);
 
         return redirect()->route('admin.news.index')->with('store_msg', 'stored');
     }
@@ -143,7 +154,9 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        return view('admin.news.edit', compact('news'));
+        $timeZones = TimeZone::Orderby('offset')->get();
+
+        return view('admin.news.edit', compact('news', 'timeZones'));
     }
 
     /**
@@ -165,7 +178,17 @@ class NewsController extends Controller
             'published_at' => 'required|date|before:tomorrow'
         ]);
 
-        $news->update($request->all());
+        $news->update([
+            'title' => $request->title,
+            'author' => $request->author,
+            'source' => $request->source,
+            'url' => $request->url,
+            'url_image' => $request->url_image,
+            'description' => $request->description,
+            'content' => $request->input('content'),
+            'time_zone_id' => $request->time_zone_id,
+            'published_at' => $request->published_at
+        ]);
 
         return redirect()->route('admin.news.index')->with('update_msg', 'updated');
     }

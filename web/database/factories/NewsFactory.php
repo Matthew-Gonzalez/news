@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\News;
+use App\Models\TimeZone;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Carbon\Carbon;
 
 class NewsFactory extends Factory
 {
@@ -21,6 +23,8 @@ class NewsFactory extends Factory
      */
     public function definition()
     {
+        $timeZoneID = TimeZone::where('name', 'UTC')->first()->id;
+
         return [
             'title' => $this->faker->unique()->sentence(4),
             'author' => $this->faker->name,
@@ -29,7 +33,8 @@ class NewsFactory extends Factory
             'url_image' => $this->faker->imageUrl(),
             'description' => $this->faker->sentence(10),
             'content' => $this->faker->text(),
-            'published_at' =>  $this->faker->dateTime()
+            'time_zone_id' => $timeZoneID,
+            'published_at' => $this->faker->dateTimeThisMonth()
         ];
     }
 }
