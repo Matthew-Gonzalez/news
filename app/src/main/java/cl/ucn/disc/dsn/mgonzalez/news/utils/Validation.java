@@ -40,4 +40,12 @@ public final class Validation {
     }
   }
 
+  public static void notNullEmpty(String value, String message) {
+    if (value == null) {
+      throw new IllegalArgumentException("Value is null -> " + message);
+    }else if (value.isEmpty()) {
+      throw new IllegalArgumentException("Value is empty -> " + message);
+    }
+  }
+
 }

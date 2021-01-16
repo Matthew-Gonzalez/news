@@ -20,14 +20,14 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import cl.ucn.disc.dsn.mgonzalez.news.NewsItem;
 import cl.ucn.disc.dsn.mgonzalez.news.R;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
-import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsApi;
+import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsAPIs;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.adapters.ModelAdapter;
 import java.util.List;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * The main class.
@@ -71,10 +71,13 @@ public class MainActivity extends AppCompatActivity {
     // Get the news in the background thread
     AsyncTask.execute(() -> {
       // Using the contracts to get the news
-      ContractsImplNewsApi contracts = new ContractsImplNewsApi("05f5d086cbc647e6bd2a902a8758af3b");
+      ContractsImplNewsAPIs contracts = new ContractsImplNewsAPIs(
+          "05f5d086cbc647e6bd2a902a8758af3b",
+          "http://192.168.1.84:8000/"
+      );
 
       // Get the news from internet
-      List<News> newsList = contracts.retrieveNews(30);
+      List<News> newsList = contracts.retrieveNews(40);
 
       // Set the adapter
       runOnUiThread(() -> {
@@ -96,10 +99,13 @@ public class MainActivity extends AppCompatActivity {
         AsyncTask.execute(() -> {
 
           // Using the contracts to get the news
-          ContractsImplNewsApi contracts = new ContractsImplNewsApi("05f5d086cbc647e6bd2a902a8758af3b");
+          ContractsImplNewsAPIs contracts = new ContractsImplNewsAPIs(
+              "05f5d086cbc647e6bd2a902a8758af3b",
+              "http://192.168.1.84:8000/"
+          );
 
           // Get the news from internet
-          List<News> newsList = contracts.retrieveNews(20);
+          List<News> newsList = contracts.retrieveNews(40);
 
           // Set the adapter
           runOnUiThread(() -> {

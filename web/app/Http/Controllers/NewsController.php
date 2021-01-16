@@ -84,9 +84,9 @@ class NewsController extends Controller
 
 
         if ($q == null){
-            return News::orderBy('published_at', 'DESC')->paginate($pageSize);
+            return News::orderBy('published_at', 'DESC')->simplePaginate($pageSize);
         }else{
-            return News::orderBy('published_at', 'DESC')->where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->paginate($pageSize);
+            return News::orderBy('published_at', 'DESC')->where('title', 'LIKE', '%' . $q . '%')->orWhere('content', 'LIKE', '%' . $q . '%')->simplePaginate($pageSize);
         }
     }
 

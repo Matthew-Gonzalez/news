@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add validation and successful alerts for store and update news">
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add time zone picker and auto convert to UCT time zone en json for API request">
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/model/ArticleTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/model/ArticleTemplateResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/network/PublicAPIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/models/NewsTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/models/NewsTemplateResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/network/APIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/services/NewsAPIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsAPIs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/PublicNewsAPIService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/test/java/cl/ucn/disc/dsn/mgonzalez/news/services/TestContractsImplNewsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/test/java/cl/ucn/disc/dsn/mgonzalez/news/services/TestContractsImplNewsApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_27_010931_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_27_010931_create_news_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/news/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
