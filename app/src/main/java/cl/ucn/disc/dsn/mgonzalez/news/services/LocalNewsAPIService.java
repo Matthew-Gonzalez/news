@@ -8,11 +8,11 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package cl.ucn.disc.dsn.mgonzalez.news.newsapi.services;
+package cl.ucn.disc.dsn.mgonzalez.news.services;
 
-import cl.ucn.disc.dsn.mgonzalez.news.newsapi.models.NewsTemplate;
-import cl.ucn.disc.dsn.mgonzalez.news.newsapi.models.NewsTemplateResponse;
-import cl.ucn.disc.dsn.mgonzalez.news.newsapi.network.APIService;
+import cl.ucn.disc.dsn.mgonzalez.news.model.NewsTemplate;
+import cl.ucn.disc.dsn.mgonzalez.news.model.NewsTemplateResponse;
+import cl.ucn.disc.dsn.mgonzalez.news.network.LocalAPIService;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * @author Matthew Gonzalez-Mansilla.
  */
-public final class NewsAPIService {
+public final class LocalNewsAPIService {
 
   /**
    * A Retrofit instance to access to our News API.
@@ -36,18 +36,18 @@ public final class NewsAPIService {
   /**
    * The API Service.
    */
-  private APIService apiService;
+  private LocalAPIService apiService;
 
   /**
    * The constructor.
    *
    * @param baseURL of our News API.
    */
-  public NewsAPIService(String baseURL) {
+  public LocalNewsAPIService(String baseURL) {
     Retrofit retrofit = new Retrofit.Builder().baseUrl(baseURL)
         .addConverterFactory(GsonConverterFactory.create()).build();
 
-    apiService = retrofit.create(APIService.class);
+    apiService = retrofit.create(LocalAPIService.class);
   }
 
   /**

@@ -12,8 +12,7 @@ package cl.ucn.disc.dsn.mgonzalez.news.services;
 
 import cl.ucn.disc.dsn.mgonzalez.news.model.ArticleTemplate;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
-import cl.ucn.disc.dsn.mgonzalez.news.newsapi.models.NewsTemplate;
-import cl.ucn.disc.dsn.mgonzalez.news.newsapi.services.NewsAPIService;
+import cl.ucn.disc.dsn.mgonzalez.news.model.NewsTemplate;
 import cl.ucn.disc.dsn.mgonzalez.news.utils.Validation;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +41,7 @@ public final class ContractsImplNewsAPIs implements  Contracts {
   /**
    * Our local News API service.
    */
-  private NewsAPIService localNewsAPIService;
+  private LocalNewsAPIService localNewsAPIService;
 
   /**
    * The constructor.
@@ -58,7 +57,7 @@ public final class ContractsImplNewsAPIs implements  Contracts {
     Validation.minSize(publicNewsAPIKey, 10, "publicNewsAPIKey !!");
 
     this.publicNewsAPIService = new PublicNewsAPIService(publicNewsAPIKey);
-    this.localNewsAPIService = new NewsAPIService(localNewsAPIBaseURL);
+    this.localNewsAPIService = new LocalNewsAPIService(localNewsAPIBaseURL);
   }
 
   /**
