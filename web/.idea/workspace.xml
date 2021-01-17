@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add time zone picker and auto convert to UCT time zone en json for API request">
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/model/ArticleTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/model/ArticleTemplateResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/network/PublicAPIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/models/NewsTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/models/NewsTemplateResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/network/APIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/newsapi/services/NewsAPIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsAPIs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/PublicNewsAPIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/src/test/java/cl/ucn/disc/dsn/mgonzalez/news/services/TestContractsImplNewsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/test/java/cl/ucn/disc/dsn/mgonzalez/news/services/TestContractsImplNewsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterDir="false" />
-    </list>
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add time zone picker and auto convert to UCT time zone en json for API request" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

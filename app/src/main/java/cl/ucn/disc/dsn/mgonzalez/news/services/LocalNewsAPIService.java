@@ -90,8 +90,10 @@ public final class LocalNewsAPIService {
 
     if (response.isSuccessful()) {
       return response.body().getData();
-    }else {
-      throw new RuntimeException("Error: " + response.code() + " --> " + response.errorBody().string());
     }
+
+    //throw new RuntimeException("Error: " + response.code() + " --> " + response.errorBody().string());
+
+    return null;
   }
 }

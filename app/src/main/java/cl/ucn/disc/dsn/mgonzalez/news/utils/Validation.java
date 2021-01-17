@@ -24,7 +24,7 @@ public final class Validation {
     notNull(value, message);
 
     if (value.length() < minSize){
-      throw new IllegalArgumentException("Value wrong size -> " + message);
+      throw new IllegalArgumentException("Value wrong size -> " + message + ": " + value);
     }
   }
 

@@ -124,7 +124,8 @@ public final class PublicNewsAPIService {
       return response.body().getArticles();
     }
 
-    throw new RuntimeException("Error: " + response.code() + " --> " + response.errorBody().string());
+    return null;
+    //throw new RuntimeException("Error: " + response.code() + " --> " + response.errorBody().string());
   }
 
 }

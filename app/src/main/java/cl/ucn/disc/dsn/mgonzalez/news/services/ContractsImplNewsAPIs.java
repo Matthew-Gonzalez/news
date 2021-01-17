@@ -14,7 +14,6 @@ import cl.ucn.disc.dsn.mgonzalez.news.model.ArticleTemplate;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
 import cl.ucn.disc.dsn.mgonzalez.news.model.NewsTemplate;
 import cl.ucn.disc.dsn.mgonzalez.news.utils.Validation;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import org.apache.commons.lang3.NotImplementedException;
 import org.threeten.bp.ZoneId;
 import org.threeten.bp.ZonedDateTime;
 
@@ -70,17 +70,17 @@ public final class ContractsImplNewsAPIs implements  Contracts {
     Validation.notNull(articleTemplate, "articleTemplate !!");
 
     // Fix the author null
-    if (articleTemplate.getAuthor() == null || articleTemplate.getAuthor().length() == 0){
+    if (articleTemplate.getAuthor() == null || articleTemplate.getAuthor().length() <= 1){
       articleTemplate.setAuthor("No author*");
     }
 
     // Fix more restrictions
-    if (articleTemplate.getDescription() == null || articleTemplate.getDescription().length() == 0){
+    if (articleTemplate.getDescription() == null || articleTemplate.getDescription().length() <= 1){
       articleTemplate.setDescription("No description*");
     }
 
     //
-    if (articleTemplate.getContent() == null || articleTemplate.getContent().length() == 0){
+    if (articleTemplate.getContent() == null || articleTemplate.getContent().length() <= 1){
       articleTemplate.setContent("No content*");
     }
 
@@ -139,6 +139,44 @@ public final class ContractsImplNewsAPIs implements  Contracts {
   }
 
   /**
+   * Get a list of article templates
+   *
+   * @param size of the list.
+   * @return a list of ArticleTemplate.
+   */
+  private List<ArticleTemplate> retrieveArticleTemplates(Integer size) {
+    try {
+      return publicNewsAPIService.getTopHeadLines(
+          size,
+          null,
+          null,
+          "technology",
+          null
+      );
+    } catch (Exception e){
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of news templates.
+   *
+   * @param size of the list.
+   * @return a list of NewsTemplate.
+   */
+  private List<NewsTemplate> retrieveNewsTemplates(Integer size) {
+    try {
+      return localNewsAPIService.getNews(
+          size,
+          null,
+          null
+      );
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  /**
    * Get the list of News.
    *
    * @param size size of the list.
@@ -150,51 +188,43 @@ public final class ContractsImplNewsAPIs implements  Contracts {
     if (size < 1) {
       throw new IllegalArgumentException("Error: size need to be > 0");
     }else {
-      try {
-        int trueSize = (size/2);
+      int trueSize = (size/2);
 
-        // Get the list of Article
-        List<ArticleTemplate> articleTemplateList = publicNewsAPIService.getTopHeadLines(
-            trueSize,
-            null,
-            null,
-            "technology",
-            null
-        );
+      // Get the list of ArticleTemplate
+      List<ArticleTemplate> articleTemplateList = retrieveArticleTemplates(trueSize);
 
 
-        // Get the list of NewsTemplate
-        List<NewsTemplate> newsTemplatesList = localNewsAPIService.getNews(
-            (size % 2 == 0) ? trueSize : trueSize + 1,
-            null,
-            null
-        );
+      // Get the list of NewsTemplate
+      List<NewsTemplate> newsTemplatesList = retrieveNewsTemplates((size % 2 == 0) ?
+          trueSize : trueSize + 1);
 
-        // The List of articles to List of news
-        List<News> rawNews = new ArrayList<>();
+      // The List of articles to List of news
+      List<News> rawNews = new ArrayList<>();
 
-
+      if (articleTemplateList != null) {
         for (ArticleTemplate articleTemplate : articleTemplateList) {
           rawNews.add(articleTemplateToNews(articleTemplate));
         }
+      }
 
-
-        for (NewsTemplate newsTemplate : newsTemplatesList){
+      if (newsTemplatesList != null) {
+        for (NewsTemplate newsTemplate : newsTemplatesList) {
           rawNews.add(newsTemplateToNews(newsTemplate));
         }
-
-        // Return the news filtered and sorted by date
-        return rawNews.stream()
-            // Remove the duplicated (by keys)
-            .filter(distinctByKey(News::getId))
-            // Order by date
-            .sorted((k1, k2) -> k2.getPublishedAt().compareTo(k1.getPublishedAt()))
-            .collect(Collectors.toList());
-
-      } catch (IOException e) {
-        // Encapsulate!
-        throw new RuntimeException(e);
       }
+
+      // If there are no news to retrieve returns null
+      if (rawNews.isEmpty()){
+        return null;
+      }
+
+      // Return the news filtered and sorted by date
+      return rawNews.stream()
+          // Remove the duplicated (by keys)
+          .filter(distinctByKey(News::getId))
+          // Order by date
+          .sorted((k1, k2) -> k2.getPublishedAt().compareTo(k1.getPublishedAt()))
+          .collect(Collectors.toList());
     }
   }
 
@@ -205,7 +235,7 @@ public final class ContractsImplNewsAPIs implements  Contracts {
    */
   @Override
   public void saveNews(News news) {
-
+    throw new NotImplementedException("Cannot save in NewsApi");
   }
 
 }
