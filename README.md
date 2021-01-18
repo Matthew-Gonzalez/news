@@ -6,10 +6,10 @@ The News Android app developed in DSM-2020-2 for educational purposes.
 ## Setup Instructions 
 In order to use our app it is necessary to follow the following instructions:
 
-1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#1-configure-env-file)
-2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#2-run-migrations-into-the-laravel-local-news-api-database)
-3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#3-poblate-the-laravel-local-news-api-databe)
-4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#4-sset-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
+1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news#1-configure-env-file)
+2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#2-run-migrations-into-the-laravel-local-news-api-database)
+3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#3-poblate-the-laravel-local-news-api-databe)
+4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news#4-sset-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
 
 &nbsp;
 
@@ -51,7 +51,7 @@ If you want to drop all the news before populating the database execute the foll
 `php artisan migrate:fresh --seed`
 
 #### 2. Manually
-Running the Laravel local server you can access to the `/news` directory from a web browser and add news using a form. You can see how to run the Laravel local server [here](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#local-news-api-instructions).
+Running the Laravel local server you can access to the `/news` directory from a web browser and add news using a form. You can see how to run the Laravel local server [here](https://github.com/Matthew-Gonzalez/news#local-news-api-instructions).
 
 &nbsp;
 
@@ -81,8 +81,8 @@ ContractsImplNewsAPIs contracts = new ContractsImplNewsAPIs(
 ## Local News API Instructions
 To gain access to the local News API server you must run a local Laravel server from the command promp follow the following instructions, unless you whant use your own public domain:
 
-1. [Get your IPV4 address](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#1-get-your-ipv4-address)
-2. [Run Laravel local server](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#2-run-laravel-local-server)
+1. [Get your IPV4 address](https://github.com/Matthew-Gonzalez/news#1-get-your-ipv4-address)
+2. [Run Laravel local server](https://github.com/Matthew-Gonzalez/news#2-run-laravel-local-server)
 
 &nbsp;
 
