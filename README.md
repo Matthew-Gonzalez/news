@@ -9,7 +9,7 @@ In order to use our app it is necessary to follow the following instructions:
 1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#1-configure-env-file)
 2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#2-run-migrations-into-the-laravel-local-news-api-database)
 3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#3-poblate-the-laravel-local-news-api-databe)
-4. [Set local News API base URL in the News app](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#4-set-local-news-api-base-url-in-the-news-app)
+4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news/new/master?readme=1#4-sset-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
 
 &nbsp;
 
@@ -55,8 +55,8 @@ Running the Laravel local server you can access to the `/news` directory from a 
 
 &nbsp;
 
-### 4. Set local News API base URL in the News app
-The last step is set the base URL you are going to use to connect and consume the local News API, for this going to the `MainActivity` class in the follow directory `\news\app\src\main\java\cl\ucn\disc\dsn\mgonzalez\news\activities` and put it in these methods as an argument:
+### 4. Set local News API base URL and public News API API key in the News app
+The last step is set the base URL and the API key (obtained from https://newsapi.org) you are going to use to connect and consume the local and public News APIs, for this going to the `MainActivity` class in the follow directory `\news\app\src\main\java\cl\ucn\disc\dsn\mgonzalez\news\activities` and put them in these methods as an argument:
 
 `line 78 to line 81`
 
