@@ -25,9 +25,12 @@ import cl.ucn.disc.dsn.mgonzalez.news.NewsItem;
 import cl.ucn.disc.dsn.mgonzalez.news.R;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
 import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsAPIs;
+
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.adapters.ModelAdapter;
 import java.util.List;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * The main class.
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Fresco.initialize(this);
     setContentView(R.layout.activity_main);
 
     // The Toolbar
