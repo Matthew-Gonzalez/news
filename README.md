@@ -9,7 +9,7 @@ In order to use our app it is necessary to follow the following instructions:
 1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news#1-configure-env-file)
 2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#2-run-migrations-into-the-laravel-local-news-api-database)
 3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#3-poblate-the-laravel-local-news-api-databe)
-4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news#4-sset-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
+4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news#4-set-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
 
 &nbsp;
 
