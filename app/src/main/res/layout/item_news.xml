@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  style="@style/News">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    style="@style/News">
 
-  <ImageView
+  <com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/in_sd_image"
     android:layout_width="80dp"
     android:layout_height="80dp"
     android:paddingTop="2dp"
     android:paddingStart="2dp"
     android:paddingEnd="2dp"
-    android:src="@mipmap/ic_launcher" />
+    android:src="@mipmap/ic_launcher"
+    fresco:placeholderImage="@drawable/ic_launcher_background"  />
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -45,5 +51,6 @@
       android:id="@+id/in_tv_description"
       style="@style/NewsDescriptionText"
       android:text="The Description" />
+
   </LinearLayout>
 </LinearLayout>
