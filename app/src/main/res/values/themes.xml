@@ -3,32 +3,33 @@
   <style name="Theme.News" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <item name="android:windowLightStatusBar">false</item>
     <!-- Primary brand color. -->
-    <item name="colorPrimary">@color/textColorPrimary</item>
-    <item name="colorPrimaryVariant">@color/textColorPrimary</item>
-    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorPrimary">@color/light_textColorPrimary</item>
+    <item name="colorPrimaryVariant">@color/light_textColorPrimary</item>
+    <item name="colorOnPrimary">@color/orange_black</item>
     <!-- Secondary brand color. -->
-    <item name="colorSecondary">@color/textColorSecondary</item>
-    <item name="colorSecondaryVariant">@color/textColorSecondary</item>
+    <item name="colorSecondary">@color/light_textColorSecondary</item>
+    <item name="colorSecondaryVariant">@color/light_textColorSecondary</item>
     <item name="colorOnSecondary">@color/black</item>
     <!-- Status bar color. -->
-    <item name="android:statusBarColor">@color/statusBarColor</item>
-    <item name="android:windowBackground">@color/windowBackground</item>
-    <item name="android:navigationBarColor">@color/navigationBarColor</item>
+    <item name="android:statusBarColor">@color/light_statusBarColor</item>
+    <item name="android:windowBackground">@color/light_windowBackground</item>
+    <item name="android:navigationBarColor">@color/light_toolbarBackground</item>
+
   </style>
 
   <!-- Toolbar -->
   <style name="Theme.News.Toolbar" parent="Widget.MaterialComponents.ActionBar.Primary">
-    <item name="android:background">@color/toolbarBackground</item>
-    <item name="titleTextColor">@color/toolbarTitleTextColor</item>
-    <item name="subtitleTextColor">@color/toolbarSubtitleTextColor</item>
-    <item name="colorControlNormal">@color/windowBackground</item>
-    <item name="android:colorControlNormal">@color/windowBackground</item>
+    <item name="android:background">@color/light_toolbarBackground</item>
+    <item name="titleTextColor">@color/light_toolbarTitleTextColor</item>
+    <item name="subtitleTextColor">@color/light_toolbarSubtitleTextColor</item>
+    <item name="colorControlNormal">@color/light_windowBackground</item>
+    <item name="android:colorControlNormal">@color/light_windowBackground</item>
     <item name="android:editTextColor">@color/white</item>
-    <item name="android:textColorHint">@color/windowBackground</item>
+    <item name="android:textColorHint">@color/light_windowBackground</item>
   </style>
 
   <!-- News -->
   <style name="Theme.News.Item">
-    <item name="android:background">#FFFFFF</item>
+    <item name="android:background">@color/white</item>
   </style>
 </resources>

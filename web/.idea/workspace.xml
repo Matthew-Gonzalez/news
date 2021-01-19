@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add an array of image URLs in the NewsFactory to pick a random one for each news">
-      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/item_news.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/item_news.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/values/black.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsAPIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/cl/ucn/disc/dsn/mgonzalez/news/services/ContractsImplNewsAPIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/button_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/button_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values/themes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +189,7 @@
       <workItem from="1610455712810" duration="16178000" />
       <workItem from="1610568356794" duration="26250000" />
       <workItem from="1611000985328" duration="5530000" />
-      <workItem from="1611064448869" duration="6040000" />
+      <workItem from="1611064448869" duration="6633000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>

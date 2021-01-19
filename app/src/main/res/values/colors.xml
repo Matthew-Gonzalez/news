@@ -7,17 +7,28 @@
   <color name="lineDivider">@color/orange_800</color>
 
   <!-- Text -->
-  <color name="textColorPrimary">@color/orange_900</color>
-  <color name="textColorSecondary">@color/orange_800</color>
-  <color name="textColorTertiary">@color/orange_700</color>
+  <color name="light_textColorPrimary">@color/orange_300</color>
+  <color name="light_textColorSecondary">@color/orange_800</color>
+  <color name="light_textColorTertiary">@color/orange_700</color>
+
+  <color name="dark_textColorPrimary">@color/black_primary</color>
+  <color name="dark_textColorSecondary">@color/black_light</color>
+  <color name="dark_textColorTertiary">@color/black_dark</color>
 
   <!-- Toolbar -->
-  <color name="statusBarColor">@color/orange_300</color>
-  <color name="toolbarBackground">@color/orange_50</color>
-  <color name="windowBackground">@color/orange_white</color>
-  <color name="dividerColor">@color/orange_300</color>
-  <color name="navigationBarColor">@color/orange_300</color>
+  <color name="light_statusBarColor">@color/orange_500</color>
+  <color name="light_toolbarBackground">@color/orange_300</color>
+  <color name="light_windowBackground">@color/orange_white</color>
+  <color name="light_dividerColor">@color/orange_300</color>
+  <color name="light_navigationBarColor">@color/orange_300</color>
+  <color name="light_toolbarTitleTextColor">@color/orange_black</color>
+  <color name="light_toolbarSubtitleTextColor">@color/orange_black</color>
 
-  <color name="toolbarTitleTextColor">@color/orange_black</color>
-  <color name="toolbarSubtitleTextColor">@color/orange_black</color>
+  <color name="dark_statusBarColor">@color/black_dark</color>
+  <color name="dark_toolbarBackground">@color/black_primary</color>
+  <color name="dark_windowBackground">@color/black_light</color>
+  <color name="dark_dividerColor">@color/orange_300</color>
+  <color name="dark_navigationBarColor">@color/black_primary</color>
+  <color name="dark_toolbarTitleTextColor">@color/orange_white</color>
+  <color name="dark_toolbarSubtitleTextColor">@color/orange_black</color>
 </resources>
