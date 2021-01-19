@@ -14,7 +14,7 @@
     android:paddingStart="2dp"
     android:paddingEnd="2dp"
     android:src="@mipmap/ic_launcher"
-    fresco:placeholderImage="@drawable/ic_launcher_background"  />
+    fresco:placeholderImage="@drawable/ic_launcher_foreground"  />
 
   <LinearLayout
     android:layout_width="match_parent"
