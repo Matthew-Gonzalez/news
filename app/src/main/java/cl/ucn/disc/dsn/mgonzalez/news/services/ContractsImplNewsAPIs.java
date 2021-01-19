@@ -215,7 +215,7 @@ public final class ContractsImplNewsAPIs implements  Contracts {
 
       // If there are no news to retrieve returns null
       if (rawNews.isEmpty()){
-        return null;
+        return rawNews;
       }
 
       // Return the news filtered and sorted by date
