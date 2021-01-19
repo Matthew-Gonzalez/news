@@ -12,7 +12,7 @@
     <item name="colorOnSecondary">@color/black</item>
     <!-- Status bar color. -->
     <item name="android:statusBarColor">@color/statusBarColor</item>
-    <item name="android:windowBackground">@color/windowBackground</item>
+    <item name="android:windowBackground">#263238</item>
     <item name="android:navigationBarColor">@color/navigationBarColor</item>
   </style>
 

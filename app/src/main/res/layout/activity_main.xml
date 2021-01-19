@@ -21,9 +21,7 @@
       android:minHeight="?attr/actionBarSize"
       app:contentInsetStart="0dp"
       app:contentInsetStartWithNavigation="0dp"
-      app:navigationIcon="@drawable/ic_launcher_foreground"
-      app:subtitle="@string/subtitle"
-      app:title="@string/title"
+      app:navigationIcon="@drawable/ic_app"
       style="@style/Theme.News.Toolbar"
     />
 

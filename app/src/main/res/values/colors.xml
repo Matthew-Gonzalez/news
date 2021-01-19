@@ -12,12 +12,12 @@
   <color name="textColorTertiary">@color/orange_700</color>
 
   <!-- Toolbar -->
-  <color name="statusBarColor">#994700</color>
-  <color name="toolbarBackground">@color/orange_900</color>
+  <color name="statusBarColor">@color/orange_300</color>
+  <color name="toolbarBackground">@color/orange_50</color>
   <color name="windowBackground">@color/orange_white</color>
   <color name="dividerColor">@color/orange_300</color>
-  <color name="navigationBarColor">#994700</color>
+  <color name="navigationBarColor">@color/orange_300</color>
 
-  <color name="toolbarTitleTextColor">@color/orange_white</color>
-  <color name="toolbarSubtitleTextColor">@color/orange_50</color>
+  <color name="toolbarTitleTextColor">@color/orange_black</color>
+  <color name="toolbarSubtitleTextColor">@color/orange_black</color>
 </resources>
