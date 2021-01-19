@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add time zone picker and auto convert to UCT time zone en json for API request">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="f7b9e47c-0d36-41fb-b3fd-b55492f4b893" name="feat(Laravel): create the web application" comment="feat(Laravel): add an array of image URLs in the NewsFactory to pick a random one for each news">
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/item_news.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/item_news.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/NewsFactory.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +183,7 @@
       <workItem from="1610455712810" duration="16178000" />
       <workItem from="1610568356794" duration="26250000" />
       <workItem from="1611000985328" duration="5530000" />
-      <workItem from="1611064448869" duration="4060000" />
+      <workItem from="1611064448869" duration="5413000" />
     </task>
     <task id="LOCAL-00001" summary="feat(Laravel): create the web application">
       <created>1609101358413</created>
@@ -305,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610487465785</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat(Laravel): add an array of image URLs in the NewsFactory to pick a random one for each news">
+      <created>1611070445872</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1611070445872</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +381,8 @@
     <MESSAGE value="feat(Laravel): add API request with pageSize, page and q optional parameters" />
     <MESSAGE value="feat(Laravel): add jQuery library and delete news confirmation alert" />
     <MESSAGE value="feat(Laravel): add validation and successful alerts for store and update news" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add validation and successful alerts for store and update news" />
+    <MESSAGE value="feat(Laravel): add an array of image URLs in the NewsFactory to pick a random one for each news" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(Laravel): add an array of image URLs in the NewsFactory to pick a random one for each news" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
