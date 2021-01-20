@@ -83,7 +83,7 @@ To gain access to the local News API server you must run a local Laravel server 
 
 1. [Get your IPV4 address](https://github.com/Matthew-Gonzalez/news#1-get-your-ipv4-address).
 2. [Run Laravel local server](https://github.com/Matthew-Gonzalez/news#2-run-laravel-local-server).
-3. [Optionals API parameters](https://github.com/Matthew-Gonzalez/news#3-optionals-api-parameters).
+3. [Optionals API parameters](https://github.com/Matthew-Gonzalez/news#3-optional-api-parameters).
 
 &nbsp;
 
