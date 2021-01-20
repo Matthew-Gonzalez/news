@@ -6,10 +6,10 @@ The News Android app developed in DSM-2020-2 for educational purposes.
 ## Setup Instructions 
 In order to use our app it is necessary to follow the following instructions:
 
-1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news#1-configure-env-file)
-2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#2-run-migrations-into-the-laravel-local-news-api-database)
-3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#3-poblate-the-laravel-local-news-api-databe)
-4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news#4-set-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app)
+1. [Configure .env file for the Laravel local News API](https://github.com/Matthew-Gonzalez/news#1-configure-env-file).
+2. [Run migrations into the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#2-run-migrations-into-the-laravel-local-news-api-database).
+3. [Poblate the Laravel local News API database](https://github.com/Matthew-Gonzalez/news#3-poblate-the-laravel-local-news-api-databe).
+4. [Set local News API base URL and public News API API key in the News app](https://github.com/Matthew-Gonzalez/news#4-set-local-news-api-base-url-and-public-news-api-api-key-in-the-news-app).
 
 &nbsp;
 
@@ -81,8 +81,9 @@ ContractsImplNewsAPIs contracts = new ContractsImplNewsAPIs(
 ## Local News API Instructions
 To gain access to the local News API server you must run a local Laravel server from the command promp follow the following instructions, unless you whant use your own public domain:
 
-1. [Get your IPV4 address](https://github.com/Matthew-Gonzalez/news#1-get-your-ipv4-address)
-2. [Run Laravel local server](https://github.com/Matthew-Gonzalez/news#2-run-laravel-local-server)
+1. [Get your IPV4 address](https://github.com/Matthew-Gonzalez/news#1-get-your-ipv4-address).
+2. [Run Laravel local server](https://github.com/Matthew-Gonzalez/news#2-run-laravel-local-server).
+3. [Optionals API parameters](https://github.com/Matthew-Gonzalez/news#3-optionals-api-parameters).
 
 &nbsp;
 
@@ -98,4 +99,15 @@ Once you get your IPV4 address execute the follwing command in the command promp
 
 `php artisan serv --host [your IPV4 address without the the brackets]`
 
-Doing this you can access from a web browser to the `\news` directory to administrator all the news in the database and access to the `\api\news` directory to consume the local News API.
+Doing this you can access from a web browser to the `/news` directory to administrator all the news in the database and access to the `/api/news` directory to consume the local News API.
+
+&nbsp;
+
+### 3. Optional API parameters
+Here are the optional parameters for the query:
+
+- pageSize: How many news The number of results to return per page (request). 20 is the default, 100 is the maximum.
+- page: Use this to page through the results if the total results found is greater than the page size.
+- q: Keywords or a phrase to search for in the title or in the content of the news
+
+Here is an example: `/api/news?pageSize=30?page=2?q=Lorem`
