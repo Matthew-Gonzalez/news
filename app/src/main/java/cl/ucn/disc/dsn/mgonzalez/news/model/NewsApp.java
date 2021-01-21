@@ -11,10 +11,30 @@
 package cl.ucn.disc.dsn.mgonzalez.news.model;
 
 import android.app.Application;
+import android.content.Context;
 
 import androidx.room.Room;
 
+/**
+ * database instance
+ *
+ * @author Felipe Salinas-Urra.
+ */
 public class NewsApp extends Application {
-    NewsDatabase db = Room.databaseBuilder(getApplicationContext(),
-            NewsDatabase.class, "NewsDatabaseByRoom").build();
+
+    // Initialization INSTANCE
+    public static NewsDatabase INSTANCE;
+
+    /**
+     * Static method to get the instance.
+     * @param context The context.
+     * @return Instance.
+     */
+    public static NewsDatabase getINSTANCE(Context context){
+        if(INSTANCE == null){
+            INSTANCE = Room.databaseBuilder(context, NewsDatabase.class, "news.db")
+                    .allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        }
+        return INSTANCE;
+    }
 }
