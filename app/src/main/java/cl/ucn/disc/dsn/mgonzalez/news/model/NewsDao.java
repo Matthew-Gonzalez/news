@@ -11,9 +11,15 @@
 package cl.ucn.disc.dsn.mgonzalez.news.model;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.List;
+
+import io.reactivex.Completable;
+import io.reactivex.Single;
 
 /**
  * CRUD operations to access the database.
@@ -23,6 +29,13 @@ import java.util.List;
 @Dao
 public interface NewsDao {
 
-    @Query("SELECT * FROM news_table")
-    List<News> getAll();
+    @Query("SELECT * FROM News")
+    Single<List<News>> getAll();
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    Completable insertAll(List<News> newsList);
+
+    @Delete
+    Completable delete(List<News> newsList);
+
 }
