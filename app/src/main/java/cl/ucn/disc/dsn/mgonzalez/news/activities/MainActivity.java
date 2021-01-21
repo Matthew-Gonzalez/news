@@ -20,12 +20,14 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.RoomDatabase;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import cl.ucn.disc.dsn.mgonzalez.news.NewsItem;
 import cl.ucn.disc.dsn.mgonzalez.news.R;
 import cl.ucn.disc.dsn.mgonzalez.news.model.News;
+import cl.ucn.disc.dsn.mgonzalez.news.model.NewsDao;
 import cl.ucn.disc.dsn.mgonzalez.news.services.ContractsImplNewsAPIs;
-
+import cl.ucn.disc.dsn.mgonzalez.news.model.NewsDatabase;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.adapters.ModelAdapter;
