@@ -24,7 +24,7 @@ import org.threeten.bp.ZonedDateTime;
  *
  * @author Matthew Gonzalez-Mansilla
  */
-@Entity(tableName = "news_table")
+@Entity(tableName = "News")
 public final class News {
 
   /**
